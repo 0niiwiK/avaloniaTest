@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+        WindowStartupLocation="CenterScreen"
+        MinWidth="800" MinHeight="500"
+        Width="800" Height="500"
+        x:Class="avaloniaTest.Nuevo"
+        Title="avaloniaTest">
+
+    <Grid RowDefinitions="Auto, *" Background="AliceBlue">
+        <Grid Grid.Row="0" Grid.ColumnDefinitions="*, *, *" Background="DarkSlateBlue">
+            <Button Grid.Column="0" FontSize="16" FontWeight="ExtraBold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Background="Crimson" Foreground="AliceBlue">Descartar Bocadillo</Button>
+            <Button Grid.Column="1" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">Guardar Bocadillo</Button>
+            <Button Grid.Column="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">Agregar Imagen</Button>
+
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnDefinitions="Auto, *, *">
+            <Grid Grid.Column="0" Grid.RowDefinitions="*, *, *, *, *">
+                <Label Grid.Row="0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Producto</Label>
+                <Label Grid.Row="1" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Stock</Label>
+                <Label Grid.Row="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Precio</Label>
+                <Label Grid.Row="3" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Tipo de Pan</Label>
+                <Label Grid.Row="4" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Caliente</Label>
+            </Grid>
+            <Grid Grid.Column="1" Grid.RowDefinitions="*, *, *, *, *">
+                <TextBox Grid.Row="0" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0"></TextBox>
+                <NumericUpDown Grid.Row="1" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0"></NumericUpDown>
+                <TextBox Grid.Row="2" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0"></TextBox>
+                <TextBox Grid.Row="3" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0"></TextBox>
+                <CheckBox Grid.Row="4" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="16, 0, 16, 0">Caliente</CheckBox>
+            </Grid>
+            <Grid Grid.Column="2" Grid.RowDefinitions="*">
+                <Panel Grid.Row="0" >
+                    <Rectangle Margin="16" Fill="DarkSlateBlue"/>
+                        <Image Source=""></Image>
+                </Panel>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>
