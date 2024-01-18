@@ -1,0 +1,81 @@
+<!--
+Este archivo XAML define la interfaz de usuario para la ventana principal de la aplicación AvaloniaTest.
+Cada sección ha sido documentada para proporcionar claridad sobre la estructura y funcionalidad del diseño.
+-->
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+        WindowStartupLocation="CenterScreen"
+        MinWidth="800" MinHeight="500"
+        Width="800" Height="500"
+        x:Class="avaloniaTest.MainWindow"
+        Title="Tiendecita Gines"
+        Closing="Window_OnClosing">
+
+    <!-- Sección 1: Encabezado de la Ventana -->
+    <Grid RowDefinitions="Auto, Auto, Auto, *, Auto">
+        <!-- Título -->
+        <Grid Grid.Row="0" Background="DarkSlateGray" Height="64">
+            <TextBlock FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="AliceBlue">TIENDECITA GINES</TextBlock>
+        </Grid>
+
+        <!-- Sección 2: Botones de Guardado y Carga -->
+        <Grid Grid.Row="1" ColumnDefinitions="*, *" Background="DarkSlateGray">
+            <Button Click="BtnCargarBocadillo" Grid.Column="0" FontSize="16" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="12" Foreground="AliceBlue">Cargar desde DataBank</Button>
+            <Button Click="BtnGuardarBocadillo" Grid.Column="1" FontSize="16" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="12" Foreground="AliceBlue">Guardar en DataBank</Button>
+        </Grid>
+
+        <!-- Sección 3: Acciones de Crear, Borrar y Modificar Imagen -->
+        <Grid Grid.Row="2" ColumnDefinitions="*, *, *" Background="CadetBlue">
+            <Button x:Name="BtnEliminarBocadillo" Click="EliminarBocadillo" Grid.Column="0" FontSize="16" FontWeight="ExtraBold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Background="Firebrick" Foreground="AliceBlue">Eliminar Bocadillo</Button>
+            <Button Click="BtnCrearBocadillo" Grid.Column="1" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">Nuevo Bocadillo</Button>
+            <Button x:Name="BtnCambiarImagen" Click="CambiarImagen" Grid.Column="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">Cambiar Imagen</Button>
+        </Grid>
+
+        <!-- Sección 4: Detalles del Bocadillo -->
+        <Grid Grid.Row="3" Grid.ColumnDefinitions="Auto, *, *" Background="AliceBlue">
+            <!-- Nombre de los Campos -->
+            <Grid Grid.Column="0" Grid.RowDefinitions="*, *, *, *, *, *">
+                <Label Grid.Row="0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Producto</Label>
+                <Label Grid.Row="1" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Stock</Label>
+                <Label Grid.Row="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Precio</Label>
+                <Label Grid.Row="3" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Tipo de Pan</Label>
+                <Label Grid.Row="4" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Caliente</Label>
+                <Label Grid.Row="5" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Precio Total</Label>
+            </Grid>
+
+            <!-- Campos del Bocadillo -->
+            <Grid Grid.Column="1" RowDefinitions="*, *, *, *, *, *">
+                <TextBox x:Name="TxtBocadillo" Grid.Row="0" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0" IsReadOnly="True"></TextBox>
+                <NumericUpDown x:Name="NumStock" Grid.Row="1" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0" IsReadOnly="True"></NumericUpDown>
+                <TextBox x:Name="TxtPrecio" Grid.Row="2" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0" IsReadOnly="True"></TextBox>
+                <ComboBox x:Name="CbTipoPan" Grid.Row="3" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0" IsEnabled="False">
+                    <ComboBoxItem>Andaluza</ComboBoxItem>
+                    <ComboBoxItem>Gallega</ComboBoxItem>
+                    <ComboBoxItem>Viena</ComboBoxItem>
+                </ComboBox>
+                <CheckBox Click="CbBocadillo_Checked" x:Name="ChbCaliente" Grid.Row="4" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="16, 0, 16, 0">Caliente</CheckBox>
+                <Label x:Name="LblTotal" Grid.Row="5" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black"></Label>
+            </Grid>
+
+            <!-- Imagen del Bocadillo -->
+            <Grid Grid.Column="2" RowDefinitions="*">
+                <Panel Grid.Row="0">
+                    <Rectangle Margin="16" Fill="DarkSlateGray"/>
+                    <Image x:Name="ImgBocadillo" Margin="16" Stretch="Fill"></Image>
+                </Panel>
+            </Grid>
+        </Grid>
+
+        <!-- Sección 5: Navegación entre Bocadillos -->
+        <Grid Grid.Row="4" ColumnDefinitions="*, Auto, *" Background="CadetBlue">
+            <Button x:Name="BtnPrev" Click="BtnBocadilloAnterior" Grid.Column="0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">BOCADILLO ANTERIOR</Button>
+            <Label x:Name="LblBocadilos" Grid.Column="1" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">0 / 0</Label>
+            <Button x:Name="BtnNext" Click="BtnBocadilloSiguiente"  Grid.Column="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">BOCADILLO SIGUIENTE</Button>
+        </Grid>
+    </Grid>
+
+</Window>

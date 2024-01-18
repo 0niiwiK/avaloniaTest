@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "avaloniaTest", "avaloniaTest\avaloniaTest.csproj", "{378B6A9D-774F-422D-89AE-2A5584A4FABD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tiendecitaGines", "tiendecitaGines\tiendecitaGines.csproj", "{378B6A9D-774F-422D-89AE-2A5584A4FABD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

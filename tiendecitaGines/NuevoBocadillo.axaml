@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+        WindowStartupLocation="CenterScreen"
+        MinWidth="800" MinHeight="500"
+        Width="800" Height="500"
+        x:Class="avaloniaTest.NuevoBocadillo"
+        Title="tiendecitaGines">
+
+    <Grid RowDefinitions="Auto, *" Background="AliceBlue">
+        <!-- Encabezado con Cancelar, Guardar y Agregar Imagen -->
+        <Grid Grid.Row="0" Grid.ColumnDefinitions="*, *, *" Background="DarkSlateBlue">
+            <Button Click="DescartarBocadillo" Grid.Column="0" FontSize="16" FontWeight="ExtraBold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Background="Crimson" Foreground="AliceBlue">Descartar Bocadillo</Button>
+            <Button Click="GuardarBocadillo" Grid.Column="1" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">Guardar Bocadillo</Button>
+            <Button Click="AgregarImagen" Grid.Column="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="8" Foreground="AliceBlue">Agregar Imagen</Button>
+        </Grid>
+
+        <!-- Contenido principal con labels, controles y mensajes -->
+        <Grid Grid.Row="1" Grid.ColumnDefinitions="Auto, *, *">
+            <!-- Columna izquierda con nombre de los campos -->
+            <Grid Grid.Column="0" Grid.RowDefinitions="*, *, *, *, *, *">
+                <Label Grid.Row="0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Producto</Label>
+                <Label Grid.Row="1" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Stock</Label>
+                <Label Grid.Row="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Precio</Label>
+                <Label Grid.Row="3" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Tipo de Pan</Label>
+                <Label Grid.Row="4" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Black">Caliente</Label>
+                <Label x:Name="LblMensaje" Grid.Row="5" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Crimson"></Label>
+            </Grid>
+
+            <!-- Columna central con controles de entrada de datos -->
+            <Grid Grid.Column="1" Grid.RowDefinitions="*, *, *, *, *, *">
+                <TextBox x:Name="TxtBocadillo" Grid.Row="0" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0"></TextBox>
+                <NumericUpDown x:Name="NumStock" Grid.Row="1" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0"></NumericUpDown>
+                <TextBox x:Name="TxtPrecio" Grid.Row="2" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0"></TextBox>
+                <ComboBox x:Name="CbTipoPan" Grid.Row="3" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="16, 0, 16, 0">
+                    <ComboBoxItem>Andaluza</ComboBoxItem>
+                    <ComboBoxItem>Gallega</ComboBoxItem>
+                    <ComboBoxItem>Viena</ComboBoxItem>
+                </ComboBox>
+                <CheckBox x:Name="ChbCaliente" Grid.Row="4" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="16, 0, 16, 0">Caliente</CheckBox>
+                <Label x:Name="Mensaje" Grid.Row="5" FontSize="16" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16, 0, 16, 0" Foreground="Crimson"></Label>
+            </Grid>
+
+            <!-- Columna derecha con visualización de imagen -->
+            <Grid Grid.Column="2" Grid.RowDefinitions="*">
+                <Panel Grid.Row="0" >
+                    <Rectangle Margin="16" Fill="DarkSlateBlue"/>
+                    <Image x:Name="ImgBocadillo" Source=""></Image>
+                </Panel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
