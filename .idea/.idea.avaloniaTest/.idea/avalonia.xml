@@ -9,6 +9,9 @@
         <entry key="avaloniaTest/NuevoBocadillo.axaml" value="avaloniaTest/avaloniaTest.csproj" />
         <entry key="avaloniaTest/NuevoBovadillo.axaml" value="avaloniaTest/avaloniaTest.csproj" />
         <entry key="avaloniaTest/UserControl1.axaml" value="avaloniaTest/avaloniaTest.csproj" />
+        <entry key="tiendecitaGines/App.axaml" value="tiendecitaGines/tiendecitaGines.csproj" />
+        <entry key="tiendecitaGines/MainWindow.axaml" value="tiendecitaGines/tiendecitaGines.csproj" />
+        <entry key="tiendecitaGines/NuevoBocadillo.axaml" value="tiendecitaGines/tiendecitaGines.csproj" />
       </map>
     </option>
   </component>
